@@ -2,6 +2,7 @@ package test.taskmanager.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,6 +35,6 @@ public class User {
     @Column(nullable = false, unique = true, length = 150)
     private String email;
 
-    @OneToMany(mappedBy = "executor")
+    @OneToMany(mappedBy = "executor",fetch = FetchType.LAZY)
     private List<Task> tasks = new ArrayList<>();
 }

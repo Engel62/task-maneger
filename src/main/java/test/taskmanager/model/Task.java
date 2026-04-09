@@ -26,7 +26,6 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Task {
 
     @Id
@@ -45,7 +44,7 @@ public class Task {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "executor_id")
-    private User excuter;
+    private User executor;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
